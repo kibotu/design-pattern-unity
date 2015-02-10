@@ -85,7 +85,7 @@ namespace UnityTest
         {
             m_CurrentlyRegisteredLogCallback = GetLogCallbackField();
             m_LogCallback = LogHandler;
-            Application.RegisterLogCallback(m_LogCallback);
+            Application.logMessageReceived += m_LogCallback;
 
             // Init dynamic tests
             foreach (var typeName in dynamicTestsToRun)
@@ -157,7 +157,7 @@ namespace UnityTest
                 var remainingTests = m_TestsProvider.GetRemainingTests();
                 TestRunnerCallback.TestRunInterrupted(remainingTests.ToList());
             }
-            Application.RegisterLogCallback(null);
+            Application.logMessageReceived -= m_LogCallback;
         }
 
         private void LogHandler(string condition, string stacktrace, LogType type)
@@ -418,7 +418,7 @@ namespace UnityTest
             var v = (Application.LogCallback)m_CurrentlyRegisteredLogCallback.GetValue(null);
             if (v == m_LogCallback) return;
             Debug.LogError("Log callback got changed. This may be caused by other tools using RegisterLogCallback.");
-            Application.RegisterLogCallback(m_LogCallback);
+            Application.logMessageReceived += m_LogCallback;
         }
 
         private FieldInfo GetLogCallbackField()

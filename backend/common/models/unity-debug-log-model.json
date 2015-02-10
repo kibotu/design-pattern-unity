@@ -1,0 +1,21 @@
+{
+  "name": "UnityDebugLogModel",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "properties": {
+    "LogMessage": {
+      "type": "string"
+    },
+    "Severity": {
+      "type": "string"
+    },
+    "Timestamp": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

@@ -1,0 +1,15 @@
+<table border="1" width="80%">
+  <tr>
+    <th>Time</th>
+    <th>Severity</th>
+    <th width="60%">Message</th>
+  </tr>
+
+  <tr ng-repeat="log in logs">
+    <td>{{ log.Timestamp  }}</td>
+    <td>{{ log.Severity }}</td>
+    <td>{{ log.LogMessage }}</td>
+    <td ng-bind-html="log.text"></td>
+  </tr>
+
+</table>

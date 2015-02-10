@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Command\ICommand.cs" />
+     <Compile Include="Assets\Scripts\Coroutine\CoroutineManager.cs" />
+     <Compile Include="Assets\Scripts\Coroutine\Coroutines.cs" />
      <Compile Include="Assets\Scripts\Decorator\AngularLogger.cs" />
      <Compile Include="Assets\Scripts\Decorator\Debug.cs" />
      <Compile Include="Assets\Scripts\Decorator\ILogger.cs" />

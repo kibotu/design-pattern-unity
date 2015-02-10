@@ -21,6 +21,22 @@ public class LoggerTest
     }
 
     [Test]
+    public void TestLogMessageVerboseAngular()
+    {
+        var e = "TestLogMessageVerboseAngular";
+        var message = "fancy message";
+        
+        Debug.Init(new AngularLogger(), Debug.Level.Verbose);
+        Debug.Verbose("{0} {1}", e, message);
+        Debug.Log(e + " " + message);
+        Debug.Info("{0} {1}", e, message);
+        Debug.Warning("{0} {1}", e, message);
+        Debug.Error("{0} {1}", e, message);
+        
+        Assert.Pass();
+    }
+
+    [Test]
     public void TestLogMessageVerbose()
     {
         var e = "TestLogMessageVerbose";
