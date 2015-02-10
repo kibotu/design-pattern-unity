@@ -70,7 +70,7 @@ public static class IntegrationTest
 
     private static void LogResult(GameObject go, string message)
     {
-        Debug.Log(message + " (" + FindTestObject(go).name + ")", go);
+        UnityEngine.Debug.Log(message + " (" + FindTestObject(go).name + ")", go);
     }
 
     private static GameObject FindTestObject(GameObject go)

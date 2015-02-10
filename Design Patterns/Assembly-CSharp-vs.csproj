@@ -39,17 +39,17 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity_5.0.0b21/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>/Applications/Unity_5.0 RC1/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity_5.0.0b21/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>/Applications/Unity_5.0 RC1/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Command\ICommand.cs" />
-     <Compile Include="Assets\Scripts\Decorator\AngularDebugLogger.cs" />
+     <Compile Include="Assets\Scripts\Decorator\AngularLogger.cs" />
+     <Compile Include="Assets\Scripts\Decorator\Debug.cs" />
      <Compile Include="Assets\Scripts\Decorator\ILogger.cs" />
-     <Compile Include="Assets\Scripts\Decorator\Logger.cs" />
      <Compile Include="Assets\Scripts\Decorator\UnityDebugLogger.cs" />
      <Compile Include="Assets\Scripts\Singleton\Prefabs.cs" />
      <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
@@ -94,8 +94,12 @@
      <None Include="Assets\UnityTestTools\LICENSE.txt" />
      <None Include="Assets\UnityTestTools\changelog.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity_5.0.0b21/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Applications/Unity_5.0 RC1/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{A3D6C61C-D173-D3C7-E734-D8B40FF10C52}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

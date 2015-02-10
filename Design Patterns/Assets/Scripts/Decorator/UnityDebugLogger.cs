@@ -1,33 +1,70 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class UnityDebugLogger : ILogger {
-
+﻿public class UnityDebugLogger : ILogger
+{
     #region ILogger implementation
 
     public void v(string message)
     {
-        Debug.Log(message);
+        Log(message);
     }
 
     public void d(string message)
     {
-        Debug.Log(message);
+        Log(message);
     }
 
     public void i(string message)
     {
-        Debug.Log(message);
+        Log(message);
     }
 
     public void w(string message)
     {
-        Debug.LogWarning(message);
+        LogWarning(message);
     }
 
     public void e(string message)
     {
-        Debug.LogError(message);
+        LogError(message);
+    }
+
+    public void Log(object message)
+    {
+        UnityEngine.Debug.Log(message);
+    }
+
+    public void Log(object message, UnityEngine.Object context)
+    {
+        UnityEngine.Debug.Log(message, context);
+    }
+
+    public void LogWarning(object message)
+    {
+        UnityEngine.Debug.LogWarning(message);
+    }
+
+    public void LogWarning(object message, UnityEngine.Object context)
+    {
+       UnityEngine.Debug.LogWarning(message, context);
+    }
+
+    public void LogException(System.Exception exception)
+    {
+        UnityEngine.Debug.LogException(exception);
+    }
+
+    public void LogException(System.Exception exception, UnityEngine.Object context)
+    {
+       UnityEngine.Debug.LogException(exception, context);
+    }
+
+    public void LogError(object message)
+    {
+        UnityEngine.Debug.LogError(message);
+    }
+
+    public void LogError(object message, UnityEngine.Object context)
+    {
+       UnityEngine.Debug.LogError(message, context);
     }
 
     #endregion

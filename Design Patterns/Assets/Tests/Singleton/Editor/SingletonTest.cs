@@ -2,35 +2,29 @@
 using System.Collections;
 using NUnit.Framework;
 
-public class SingletonTest {
-
+public class SingletonTest
+{
     [Test]
-    public void TestInstantiation () {
+    public void TestInstantiation()
+    {
         Prefabs.Instance.GetPrefabByName("Cube");
         Prefabs.Instance.GetPrefabByName("Sphere");
         var prefabs = Prefabs.Instance;
         var sockets = SocketHandler.Instance;
 
-        Logger.Init(new UnityDebugLogger(), Logger.Level.All);
-        Logger.Debug("{0} : {1}", "a", "b");
-        Logger.Debug("a : b");
+        Debug.Init(new UnityDebugLogger(), Debug.Level.All);
+        Debug.Log("a : b");
 
-        if(prefabs != Prefabs.Instance)
+        if (prefabs != Prefabs.Instance)
         {
             Assert.Fail();
         }
 
-        if(sockets != SocketHandler.Instance)
+        if (sockets != SocketHandler.Instance)
         {
             Assert.Fail();
         }
         
         Assert.Pass();
-    }
-
-    [Test]
-    public void CleanUp() 
-    {
-        Application.LoadLevel(0);
     }
 }

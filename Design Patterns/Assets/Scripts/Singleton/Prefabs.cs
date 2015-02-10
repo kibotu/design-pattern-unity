@@ -23,7 +23,7 @@ public class Prefabs : MonoBehaviour
                 if (_instance == null)
                 {
                     _instance = _instance ?? (_instance = (Resources.Load("Prefabs", typeof(GameObject)) as GameObject).GetComponent<Prefabs>());
-                    Debug.Log("Created Singleton: " + typeof(Prefabs));
+                  //  Debug.Log("Created Singleton: " + typeof(Prefabs));
                 }
             }
             
